@@ -12,7 +12,7 @@ import { BsInstagram } from "react-icons/bs";
 
 const Contacts = () => {
   return (
-    <div className='flex justify-center items-center pt-20 pr-20'>
+    <div className='flex justify-center items-center  pr-20  h-screen snap-start'>
        
            
       <div className="mr-20 ">

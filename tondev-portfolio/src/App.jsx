@@ -11,17 +11,13 @@ import "./App.css"
 function App() {
   return (
     <>
- 
       <Routes>
         <Route path="/" element={<Layout />} >
-
         <Route index  element={<Home /> } />
         <Route path="projects" element={<Projects />} />
         <Route path="contacts" element={<Contacts />} />
         <Route path="aboutme" element={<AboutMe />} />
         <Route path="skills" element={<Skills />} />
-       
-
         </Route>
       </Routes>
    

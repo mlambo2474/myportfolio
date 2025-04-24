@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, NavLink } from 'react-router-dom'
 
 
 const Header = () => {
@@ -10,14 +10,25 @@ const Header = () => {
          <p>generaltonde@gmail.com</p>
          <p>+27 61 310 1642</p>
          </div>
-     
-      
        <div className="flex items-center px- font-bold ">
-        <span className="px-2 mx-2 cursor-pointer" onClick={()=> Navigate("/")}>Home</span>
+         {
+          ["/", "skills", "aboutme", "projects", "contacts"].map((path, index) =>{
+            const labels = ["Home", "Services", "About me", "My Work", "Contact me"];
+            return(
+              <NavLink key={path} to={path === "/"? "/" : `${path}`} className={({isActive}) =>
+              `px-2 py-1 mx-2 cursor-pointer transition duration-300 border-b-2
+              ${isActive? "border-white text-pink-200" : "border-transparent hover:text-indigo-500 hover:bg-pink-200 rounded-lg"}`
+              }>
+                 {labels[index]}
+              </NavLink>
+            )
+          })
+         }
+        {/* <span className="px-2 mx-2 cursor-pointer" onClick={()=> Navigate("/")}>Home</span>
         <span  className="px-2 mx-2 cursor-pointer" onClick={()=> Navigate("skills")}>Services</span>
         <span  className="px-2 mx-2 cursor-pointer" onClick={()=> Navigate("aboutme")}>About Me</span>
         <span  className="px-2 mx-2 cursor-pointer" onClick={()=> Navigate("projects")}>My Work</span>
-        <span  className="px-2 mx-2 cursor-pointer w-28" onClick={()=> Navigate("contacts")}>Contact me</span>
+        <span  className="px-2 mx-2 cursor-pointer w-28" onClick={()=> Navigate("contacts")}>Contact me</span> */}
        </div>
 
     </div>
